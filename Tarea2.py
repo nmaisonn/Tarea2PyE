@@ -27,12 +27,17 @@ def TiradaMaria(tiradaJuan):
     dice2 = random.randint(1,6)
     if dice1 == 4:
         if dice2 < tiradaJuan:
-        #if dice2 <= 3 or dice2 < tiradaJuan :
             dice2 = random.randint(1,6)
+        else if dice2 == tiradaJuan
+            if (tiradaJuan/6) > 0.5:
+                dice2 = random.randint(1,6)
         return dice2
     elif dice2 == 4:
         if dice1 < tiradaJuan:
             dice1 = random.randint(1,6)
+            else if dice1 == tiradaJuan
+            if (tiradaJuan/6) > 0.5:
+                dice1 = random.randint(1,6)
         return dice1
     else:
         dice1 = random.randint(1,6)
@@ -43,7 +48,6 @@ def TiradaMaria(tiradaJuan):
             return dice1
         else:
             return 0
-
 
 def Juego():
     juan = TiradaJuan()
@@ -73,11 +77,6 @@ def nJuegos(n):
     print("Juan gano",juan,"veces.")
     print("Maria gano",maria,"veces.")
     print("Empate",empate,"veces.") 
-
-
-
-
-
 
 
 
