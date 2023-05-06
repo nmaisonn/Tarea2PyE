@@ -22,23 +22,33 @@ def TiradaJuan():
         else:
             return 0
         
+# Tirada de Maria conociendo la tirada de Juan, utilizando la estrategia desarrollada por el equipo.
 def TiradaMaria(tiradaJuan):
+    # Maria tira dados por primera vez.
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
+
+    # Verificamos si alguno de los dados es un 4.
     if dice1 == 4:
+        # Si el puntaje de maria es menor al de Juan, tira nuevamente el dado que no es un 4.
         if dice2 < tiradaJuan:
             dice2 = random.randint(1,6)
-        else if dice2 == tiradaJuan
-            if (tiradaJuan/6) > 0.5:
+        # Si el puntaje de maria es igual al de Juan, tira nuevamente el dado que no es un 4, solo si la probabilidad de que el dado sea mayor a 4 es mayor o igual a 4/6.
+        # Es decir, Maria tira nuevamente solo si empatan en un puntaje menor o igual a 3.
+        elif dice2 == tiradaJuan:
+            if ( (6 - tiradaJuan)/6 ) >= 4/6:  # (6 - tiradaJuan)/6 es la probabilidad de obtener un puntaje mayor o igual al de Juan.
                 dice2 = random.randint(1,6)
         return dice2
     elif dice2 == 4:
+        # Lo mismo que antes pero con el otro dado.
         if dice1 < tiradaJuan:
             dice1 = random.randint(1,6)
-            else if dice1 == tiradaJuan
-            if (tiradaJuan/6) > 0.5:
+        elif dice1 == tiradaJuan:
+            if ( (6 - tiradaJuan)/6 ) > 0.5:
                 dice1 = random.randint(1,6)
         return dice1
+    
+    # Si ninguno de los dados es un 4, se tira nuevamente.
     else:
         dice1 = random.randint(1,6)
         dice2 = random.randint(1,6)
